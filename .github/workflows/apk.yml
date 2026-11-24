@@ -10,7 +10,6 @@ jobs:
       - run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
       - uses: gradle/actions/setup-gradle@v4
         with: { gradle-version: 8.7 }
-      - run: gradle -p android assembleDebug --no-daemon
+      - run: gradle -p ki-clash-z/android assembleDebug --no-daemon
       - uses: actions/upload-artifact@v4
-        with: { name: ki-clash-z-apk, path: android/app/build/outputs/apk/debug/*.apk }
-
+        with: { name: ki-clash-z-apk, path: ki-clash-z/android/app/build/outputs/apk/debug/*.apk }
